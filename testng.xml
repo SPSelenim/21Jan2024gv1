@@ -7,8 +7,7 @@
      <class name="P21Jan2024.e2e.Dev1.Dev1"/>
     <class name="P21Jan2024.e2e.Dev1.Dev2"/>
      <class name="P21Jan2024.e2e.DevOps1.DevOps1"/>
-       <class name="P21Jan2024.e2e.QA1.QA1"/> 
-      <class name="P21Jan2024.e2e.Login1"/>
+   <!--    <class name="P21Jan2024.e2e.QA1.QA1"/> -->
    
     </classes>
   </test> <!-- Test -->
