@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="P21Jan2024.e2e.Login1"/>
+     <class name="P21Jan2024.e2e.Dev1.Dev1"/>
+    <class name="P21Jan2024.e2e.Dev1.Dev2"/>
+     <class name="P21Jan2024.e2e.DevOps1.DevOps1"/>
+       <class name="P21Jan2024.e2e.QA1.QA1"/> 
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
