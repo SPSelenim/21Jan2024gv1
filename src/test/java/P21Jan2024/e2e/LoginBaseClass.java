@@ -17,7 +17,8 @@ public class LoginBaseClass {
 	public FileInputStream fis = null;
 	public Properties mylogin = null;
 
-	@BeforeClass
+	
+		@BeforeClass
 	public void setUp() {
 		System.setProperty("webdriver.gecko.driver", "D:\\Satish\\05DemoApps\\ChromeDriver\\geckodriver.exe");
 
@@ -31,6 +32,9 @@ F = new File(System.getProperty("user.dir")+"\\src\\test\\java\\P21Jan2024\\e2e\
 fis = new FileInputStream(F);
 mylogin = new Properties();
 mylogin.load(fis);
+
+
+
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -42,4 +46,5 @@ mylogin.load(fis);
 
 	}
 
+	
 }
