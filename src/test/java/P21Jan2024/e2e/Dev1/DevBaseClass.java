@@ -10,17 +10,26 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
 public class DevBaseClass {
 	public WebDriver driver = null;
 	public String myApplication = null;
 	public File F = null;
 	public FileInputStream fis = null;
 	public Properties myDev = null;
-
+	public static ExtentTest test;
+	public static ExtentReports report;
+	
 	@BeforeClass
 	public void setUp() {
 		try
 		{
+			
+			report = new ExtentReports(System.getProperty("user.dir")+"\\Logs\\Extente2eReportResults.html");
+			test = report.startTest("Extente2e");
+			
 		System.setProperty("webdriver.gecko.driver", "D:\\Satish\\05DemoApps\\ChromeDriver\\geckodriver.exe");
 
 		driver = new FirefoxDriver();
@@ -49,6 +58,9 @@ myDev.load(fis);
 
 	@AfterClass
 	public void tearDown() {
+		report.endTest(test);
+		report.flush();
+		
 		driver.quit();
 		
 	}

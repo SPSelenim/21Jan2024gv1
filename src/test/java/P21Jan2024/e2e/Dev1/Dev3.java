@@ -4,6 +4,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.relevantcodes.extentreports.LogStatus;
+
 import Utility1.UtilityTest;
 
 public class Dev3 extends DevBaseClass  {
@@ -12,7 +14,14 @@ public class Dev3 extends DevBaseClass  {
 	public void f(String UserName,String Password1) {
 
 		System.out.println("Third PROGRAM");
+		test.log(LogStatus.PASS, "Entered" + UserName+ "And : " + Password1);
 
+		if(UserName.contains("second"))
+		{
+			test.log(LogStatus.FAIL, "Entered" + UserName+ "And : " + Password1 +"are Incorrect");
+	
+		}
+		
 		DevPOM dp=new DevPOM(driver);
 		try
 		{
