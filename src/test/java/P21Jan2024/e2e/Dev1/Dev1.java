@@ -14,6 +14,7 @@ public class Dev1 extends DevBaseClass{
 	@Test
   public void f() {
 	  System.out.println("FIRST PROGRAM");
+	  Assert.assertEquals(false, true);
 	DevPOM dp=new DevPOM(driver);
  aa=new SoftAssert();
 	try

@@ -1,5 +1,6 @@
 package P21Jan2024.e2e.Dev1;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -19,7 +20,7 @@ public class Dev3 extends DevBaseClass  {
 		if(UserName.contains("second"))
 		{
 			test.log(LogStatus.FAIL, "Entered" + UserName+ "And : " + Password1 +"are Incorrect");
-	
+	Assert.assertEquals(false, true);
 		}
 		
 		DevPOM dp=new DevPOM(driver);
