@@ -47,7 +47,7 @@ public class Dev3 extends DevBaseClass  {
 	{
 		String [][]mydata=null;
 		UtilityTest ut = new UtilityTest();
-	mydata=	ut.ReadExcelData("dev.xlsx", "Sheet1");
+	mydata=	ut.ReadExcelData(System.getProperty("user.dir")+"\\src\\test\\java\\P21Jan2024\\e2e\\Dev1\\dev.xlsx", "Sheet1");
 return mydata;
 		
 	}

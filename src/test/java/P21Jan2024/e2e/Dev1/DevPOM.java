@@ -22,14 +22,7 @@ WebDriver ldriver=null;
 
 	WebElement getdevUserPwd(String Last) {
 		WebElement devUserPwd1 = null;
-try
-{
 		devUserPwd1 = ldriver.findElement(By.xpath(Last));
-}
-catch(Exception e)
-{
-	System.out.println(e.getMessage());
-}
 return devUserPwd1;
 }
 

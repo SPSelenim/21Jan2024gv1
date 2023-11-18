@@ -2,11 +2,13 @@ package Utility1;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
+import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.OutputType;
@@ -24,10 +26,15 @@ public class UtilityTest {
 	public Short col1 = 0;
 	public int totalR = 0;
 	public short totalC = 0;
+public FileOutputStream fos=null;
+public FileOutputStream fos1=null;
 
-	public String[][] myD = null;
+public String[][] myD = null;
 
-	public UtilityTest() {
+public XSSFCell mydata=null;
+public XSSFCell mydata1=null;
+
+public UtilityTest() {
 		PropertyConfigurator.configure("D:\\Satish\\03Eclipse_Workspace\\21Jan2024\\e2e\\log4j.properties");
 		logger = Logger.getLogger("e2e");
 
@@ -64,7 +71,7 @@ public class UtilityTest {
 
 	public int getRowCount(String excelName, String sheetName) throws IOException {
 		try {
-			Fx = new File("./" + "\\src\\test\\java\\P21Jan2024\\e2e\\Dev1\\" + excelName);
+			Fx = new File(excelName);
 			FISx = new FileInputStream(Fx);
 			wb = new XSSFWorkbook(FISx);
 			sh1 = wb.getSheet(sheetName);
@@ -83,13 +90,14 @@ public class UtilityTest {
 
 	public Short getColCoumnt(String excelName, String sheetName) throws IOException {
 		try {
-			Fx = new File("./" + "\\src\\test\\java\\P21Jan2024\\e2e\\Dev1\\" + excelName);
+			Fx = new File(excelName);
 			FISx = new FileInputStream(Fx);
 			wb = new XSSFWorkbook(FISx);
 			sh1 = wb.getSheet(sheetName);
 			col1 = sh1.getRow(0).getLastCellNum();
 			System.out.println(col1);
 			return col1;
+
 		}
 
 		catch (Exception e) {
@@ -102,8 +110,8 @@ public class UtilityTest {
 
 	public String[][] ReadExcelData(String ExcelName, String sheetName) {
 		try {
-			totalR = getRowCount("dev.xlsx", "Sheet1");
-			totalC = getColCoumnt("dev.xlsx", "Sheet1");
+			totalR = getRowCount(ExcelName, sheetName);
+			totalC = getColCoumnt(ExcelName, sheetName);;
 			myD = new String[totalR][totalC];
 
 			for (int i = 0; i <totalR; i++) {
@@ -123,4 +131,27 @@ public class UtilityTest {
 
 	}
 
+	
+	public void WriteExcelData(String ExcelName, String sheetName,String Val1,int cellNumber) {
+		try {
+			
+			totalR = getRowCount(ExcelName, sheetName);
+mydata= sh1.createRow(totalR+1).createCell(cellNumber);
+mydata.setCellValue(Val1);
+fos=new FileOutputStream(Fx);
+
+wb.write(fos);
+
+
+
+fos.close();
+				}
+			
+
+		catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+	
+	}
 }
