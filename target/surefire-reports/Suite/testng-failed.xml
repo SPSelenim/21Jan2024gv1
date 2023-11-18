@@ -6,6 +6,14 @@
   </listeners>
   <test thread-count="5" name="Test(failed)" verbose="0">
     <classes>
+      <class name="P21Jan2024.e2e.Dev1.Dev3">
+        <methods>
+          <include name="teradown"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="f" invocation-numbers="1 1 1 1"/>
+        </methods>
+      </class> <!-- P21Jan2024.e2e.Dev1.Dev3 -->
       <class name="P21Jan2024.e2e.Dev1.Dev1">
         <methods>
           <include name="tearDown"/>
