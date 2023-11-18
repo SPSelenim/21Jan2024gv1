@@ -12,7 +12,7 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 
 public class LoginBaseClass {
-
+//This is a base class
 	public static ExtentTest test;
 	public static ExtentReports report;
 	
