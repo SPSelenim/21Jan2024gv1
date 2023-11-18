@@ -11,7 +11,8 @@ WebDriver ldriver=null;
 	public LoginPOM(WebDriver rdriver) {
 
 		ldriver=rdriver;
-}
+System.out.println("DRIVER INIT");
+	}
 	
 	WebElement getUserName(String First) {
 		WebElement UserName1;
